@@ -1,0 +1,195 @@
+/* Adjust this value based on the height of your fixed-top navbar */
+body {
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#main-content {
+    flex: 1;
+}
+
+/* Styling for the footer */
+footer {
+    background-color: #f4f5f5;
+    /* Light gray background color */
+    padding: 5px 0;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Custom style for the horizontal blue bar */
+.blue-bar {
+    background-color: #01184d;
+    /* Blue color */
+    height: 2.3rem;
+    color: white;
+    font-weight: 100;
+}
+
+h6 {
+    font-weight: 300;
+}
+
+h3,
+h4,
+h5 {
+    color: #01184d;
+    display: inline-block;
+    position: relative;
+}
+
+h3 {
+    font-weight: 700;
+}
+
+a {
+    color: #01184d;
+}
+
+a:hover {
+    color: #ed1c24;
+}
+
+/* Hover effect for navigation icons */
+.navbar-nav .nav-item .nav-link:hover {
+    font-weight: 500;
+    color: #01184d;
+    /* Change color on hover */
+}
+
+.navbar-nav .nav-item .nav-link.active {
+    font-weight: 500;
+    color: #01184d;
+    text-decoration: underline;
+    /* Underline the text */
+}
+
+
+#imageContainer {
+    max-width: 30%;
+    /* Ensure the image container doesn't exceed its parent's width */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    /* Adjust margin as needed */
+    margin-bottom: 10px;
+    /* Adjust margin as needed */
+}
+
+#imageContainer img {
+    border-radius: 1rem;
+}
+
+.homepageImage {
+    border-radius: 1rem;
+}
+
+.slider-image {
+    width: 100%;
+    display: none;
+}
+
+#prevBtn,
+#nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#prevBtn {
+    left: -30px;
+}
+
+#nextBtn {
+    right: -30px;
+}
+
+.construction-dive {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.construction-image {
+    width: 300px;
+    height: auto;
+}
+
+
+.under-construction {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-content {
+    font-weight: 300;
+    font-size: large;
+}
+
+.homepageImage {
+    max-width: 90%;
+}
+
+.distributorImage {
+    max-width: 30%;
+}
+
+.div-border {
+    border-style: solid;
+    border-width: .5px;
+    border-color: #cecdcd;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+ol {
+    text-align: center;
+    padding-left: 0;
+}
+
+li {
+    text-align: left;
+}
+
+.arrow-icon {
+    width: 20px; /* Adjust width as needed */
+    height: 20px; /* Adjust height as needed */
+    /* Add any additional styling here */
+}
+
+.faq {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styling for the horizontal lines on larger screens */
+@media (min-width: 768px) {}
+
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    #imageContainer {
+        max-width: 50%;
+    }
+}
