@@ -179,7 +179,13 @@ li {
 }
 
 /* Styling for the horizontal lines on larger screens */
-@media (min-width: 768px) {}
+@media (max-width: 768px) {
+    .smallScreenPadding{
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+}
 
 
 @media (max-width: 768px) {
