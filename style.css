@@ -178,6 +178,13 @@ li {
     align-items: center;
 }
 
+.subAgents{
+    padding-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* Styling for the horizontal lines on larger screens */
 @media (max-width: 768px) {
     .smallScreenPadding{

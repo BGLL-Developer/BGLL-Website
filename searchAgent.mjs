@@ -13,10 +13,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const button = document.createElement("button");
         button.textContent = district;
-        button.classList.add("btn", "btn-primary", "w-100"); // Button takes full width
+
+        button.classList.add("btn", "btn-primary", "w-100", 'subAgents'); // Button takes full width
         button.addEventListener("click", function () {
             populateAgentsTable(district);
         });
+
+        // Create an image element for the SVG
+        const svgIcon = document.createElement("img");
+        svgIcon.src = "/assets/icons/caret-down-solid-white.svg";
+        svgIcon.alt = "Caret Down Icon"; // Provide alternative text for accessibility
+
+        // Append the SVG image element to the button
+        button.appendChild(document.createTextNode(" ")); // Add some spacing
+        button.appendChild(svgIcon);
+
+        // Optionally, you may want to style the SVG icon if needed
+        svgIcon.style.width = "16px"; // Adjust width as needed
+        svgIcon.style.height = "16px"; // Adjust height as needed
 
         buttonDiv.appendChild(button);
         districtButtonsContainer.appendChild(buttonDiv);
@@ -32,16 +46,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Create table headers
         const tableHeaders = `
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Business Name</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Community</th>
-                    <th scope="col">District</th>
-                </tr>
-            </thead>
-        `;
+        <thead>
+            <tr>
+                <th scope="col" style="text-align: left">#</th>
+                <th scope="col" style="text-align: left">Business Name</th>
+                <th scope="col" style="text-align: left">Address</th>
+                <th scope="col" style="text-align: left">Community</th>
+                <th scope="col" style="text-align: left">District</th>
+            </tr>
+        </thead>`;
+
         agentsTable.insertAdjacentHTML("beforeend", tableHeaders);
 
         // Populate table with agents
