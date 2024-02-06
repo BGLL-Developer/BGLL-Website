@@ -187,21 +187,13 @@ li {
 
 /* Styling for the horizontal lines on larger screens */
 @media (max-width: 768px) {
+    #imageContainer {
+        max-width: 85%;
+    }  
+
+
     .smallScreenPadding{
         padding-top: 2rem;
         padding-bottom: 2rem;
     }    
-}
-
-
-@media (max-width: 768px) {
-
-    html,
-    body {
-        height: 100%;
-    }
-
-    #imageContainer {
-        max-width: 50%;
-    }
 }
