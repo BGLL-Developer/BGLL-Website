@@ -49,6 +49,7 @@ var boledoDatabase = {
     "12/02/2024": '10',
     "13/02/2024": '78',
     "14/02/2024": '36',
+    "15/02/2024": '63',
 }
 
 var ordinaryLotteryDatabase = {
