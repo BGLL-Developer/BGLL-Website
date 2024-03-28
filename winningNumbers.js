@@ -77,6 +77,7 @@ var boledoDatabase = {
   "22/03/2024": "32",
   "25/03/2024": "76",
   "26/03/2024": "09",
+  "27/03/2024": "07",
 };
 
 var ordinaryLotteryDatabase = {
