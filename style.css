@@ -69,22 +69,11 @@ a:hover {
 }
 
 
-#imageContainer {
-    max-width: 30%;
-    /* Ensure the image container doesn't exceed its parent's width */
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    /* Adjust margin as needed */
-    margin-bottom: 10px;
-    /* Adjust margin as needed */
+#winningNumber{
+    color: #261e59;
 }
 
-#imageContainer img {
-    border-radius: 1rem;
-}
+
 
 .homepageImage {
     border-radius: 1rem;
@@ -95,22 +84,6 @@ a:hover {
     display: none;
 }
 
-#prevBtn,
-#nextBtn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-#prevBtn {
-    left: -30px;
-}
-
-#nextBtn {
-    right: -30px;
-}
 
 .construction-dive {
     margin: 0;
@@ -187,13 +160,8 @@ li {
 
 /* Styling for the horizontal lines on larger screens */
 @media (max-width: 768px) {
-    #imageContainer {
-        max-width: 85%;
-    }  
-
-
     .smallScreenPadding{
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }    
 }

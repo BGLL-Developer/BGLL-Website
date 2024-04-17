@@ -22,27 +22,16 @@
     <div class="container mt-4" id="main-content">
         <!-- Home Page Content -->
         <div id="home">
-            <div class="row text-center pb-4 smallScreenPadding">
+            <div class="row text-center py-4 smallScreenPadding">
                 <h3>FI WE FUN! &nbsp;FI WE PROFITS! &nbsp;FI WE BOLEDO!</h3>
                 <a href="/about.html">Find Out More About BGLL <span><img src="/assets/icons/link-solid.svg"
                             alt="Link Icon" width="20" height="auto"></span></a>
             </div>
 
-            <div class="row text-center mx-4 pb-4 smallScreenPadding">
-                <h4 class="mt-2">WINNING NUMBERS</h4>
-                <div id="imageContainer" class="mx-auto">
-                    <img src="/assets/home/Weekly Winning Numbers-1.jpg" alt="Winning Numbers" class="slider-image" loading="lazy">
-                    <img src="/assets/home/Weekly Winning Numbers-2.jpg" alt="Winning Numbers" class="slider-image" loading="lazy">
-                    <img src="/assets/home/Weekly Winning Numbers-3.jpg" alt="Winning Numbers" class="slider-image" loading="lazy">
-                    <img src="/assets/home/Weekly Winning Numbers-4.jpg" alt="Winning Numbers" class="slider-image" loading="lazy">
-                    <img src="/assets/home/Weekly Winning Numbers-5.jpg" alt="Winning Numbers" class="slider-image" loading="lazy">
-                    <img src="/assets/home/Weekly Winning Numbers-6.jpg" alt="Winning Numbers" class="slider-image" loading="lazy">
-
-                    <!-- Navigation buttons -->
-                    <span id="prevBtn" onclick="prevImage()"><img src="/assets/icons/angles-left-solid.svg"
-                            alt="Bars Icon" width="30" height="30"></span>
-                    <span id="nextBtn" onclick="nextImage()"><img src="/assets/icons/angles-right-solid.svg"
-                            alt="Bars Icon" width="30" height="30"></span>
+            <div class="row text-center mx-2 pb-4 smallScreenPadding">
+                <h4 class="mt-2 fs-3">🎉WINNING NUMBER🎉 <br> <span id="date"></span> <br>Boledo</h4>
+                <div class="mx-auto p-2 fs-1 fw-bolder">
+                    <span id="winningNumber"></span>
                 </div>
                 <a href="/winning-numbers.html">Looking for Other Dates? <span><img src="/assets/icons/link-solid.svg"
                             alt="Link Icon" width="20" height="auto"></span></a>
@@ -103,6 +92,59 @@
                 </div>
             </div>
         </div>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyBTMrLBvBniX58bDBQgWuUtuU-SAu1qIxs",
+                authDomain: "bgll-update-portal-35881.firebaseapp.com",
+                projectId: "bgll-update-portal-35881",
+                storageBucket: "bgll-update-portal-35881.appspot.com",
+                messagingSenderId: "830618333350",
+                appId: "1:830618333350:web:7d6acbd0260d58c8f80467"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+
+            // Import the necessary Firebase modules
+            import { getFirestore, doc, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+
+            function checkForWinningNumber(dateString) {
+                // Reference to your Firebase database
+                const db = getFirestore(app);
+                const boledoRef = collection(db, "Boledo");
+                const q = query(boledoRef, where("date", "==", dateString)); // Filter by date field
+
+                getDocs(q).then((querySnapshot) => {
+                    const winningNumbers = querySnapshot.docs.map((doc) => doc.data());
+
+                    if (winningNumbers.length > 0) {
+                        const data = winningNumbers[0];
+                        document.getElementById('date').innerText = new Date(dateString).toDateString();
+                        document.getElementById('winningNumber').innerText = data.winningNumber;
+                    } else {
+                        console.log("No data available for", dateString);
+                        // If no data for today, check yesterday
+                        checkForWinningNumber(getYesterdayDateString());
+                    }
+                }).catch((error) => {
+                    console.error(error);
+                });
+            }
+
+            function getYesterdayDateString() {
+                const today = new Date();
+                today.setDate(today.getDate() - 1);
+                return today.toLocaleDateString();
+            }
+
+            // Check for today's winning number first
+            checkForWinningNumber(new Date().toLocaleDateString());
+
+        </script>
     </div>
     <!-- ----------------------------------------------------------------------- -->
 
