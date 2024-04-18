@@ -55,44 +55,8 @@ includeHTML('header.html', 'header-container', function () {
 
 
 
-var currentImageIndex = 0;
-var images = document.querySelectorAll('.slider-image');
-
-function showImage(index) {
-
-    // Hide all images
-    images.forEach(function (img) {
-        img.style.display = 'none';
-    });
-
-    // Show the selected image
-    images[index].style.display = 'block';
-
-}
-
-function nextImage() {
-    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-    showImage(currentImageIndex);
-}
-
-function prevImage() {
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-    showImage(currentImageIndex);
-}
-
-// Show the first image initially
-showImage(currentImageIndex);
 
 
-function toggleIcon(button) {
-    var arrowIcon = button.querySelector('.arrow-icon');
-    console.log(arrowIcon)
-    if (arrowIcon.src.endsWith('/assets/icons/caret-down-solid.svg')) {
-        arrowIcon.src = '/assets/icons/caret-up-solid.svg'; // Change to the path of your new image
-    } else {
-        arrowIcon.src = '/assets/icons/caret-down-solid.svg'; // Change to the path of your default image
-    }
-}
 
 function searchWinningNumber() {
     // Grab the selected game

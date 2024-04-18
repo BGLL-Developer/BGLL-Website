@@ -159,6 +159,15 @@ li {
     align-items: center;
 }
 
+
+
+.moving-text {
+    animation: moveText 10s linear infinite;
+    color: #01184d;
+
+    
+}
+
 /* Styling for the horizontal lines on larger screens */
 @media (max-width: 768px) {
     .smallScreenPadding{
