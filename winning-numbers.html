@@ -38,9 +38,9 @@
                 <div class="col-sm">
                     <label for="gameSelect" class="form-label fw-bold">Select a Game:</label>
                     <select class="form-select" id="gameSelect">
-                        <option value="boledo">Boledo</option>
-                        <option value="jackpot">Jackpot</option>
-                        <option value="ordinary Lottery">Ordinary Lottery</option>
+                        <option value="Boledo">Boledo</option>
+                        <option value="Jackpot">Jackpot</option>
+                        <option value="Lottery">Ordinary Lottery</option>
                     </select>
                 </div>
                 <div class="col-sm"></div>
@@ -51,8 +51,7 @@
                 <div class="col-sm"></div>
                 <!-- Search Button -->
                 <div class="col-md-2">
-                    <button class="btn btn-primary w-100" id="searchButton"
-                        onclick="searchWinningNumber()">Search</button>
+                    <button class="btn btn-primary w-100" id="searchButton">Search</button>
                 </div>
                 <div class="col-sm"></div>
                 <div class="col-sm"></div>
@@ -69,9 +68,15 @@
     </div>
     <!-- ----------------------------------------------------------------------- -->
 
-
     <!-- Include the footer using JavaScript -->
     <div id="footer-container"></div>
+    <script type="module">
+        import * as firebase from './firebase.js';
+
+        const searchButton = document.getElementById('searchButton');
+        searchButton.addEventListener('click', () => firebase.searchWinningNumber());
+
+    </script>
     <script src="script.js"></script>
     <!-- Font Awesome JS (for icons) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>

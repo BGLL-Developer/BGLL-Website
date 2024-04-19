@@ -56,8 +56,25 @@
                 <hr>
                 <h4>SUB-AGENTS</h4>
                 <p>Kindly Select a District</p>
-                <div class="row mx-auto" id="districtButtons">
-                    <!-- District buttons will be dynamically added here -->
+                <div class="row mx-auto">
+                    <div class="col-sm mb-2">
+                        <button id="districtButton" class="btn btn-primary w-100">Corozal</button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="districtButton" class="btn btn-primary w-100">Orange Walk</button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="districtButton" class="btn btn-primary w-100">Belize</button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="districtButton" class="btn btn-primary w-100">Cayo</button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="districtButton" class="btn btn-primary w-100">Stann Creek</button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="districtButton" class="btn btn-primary w-100">Toledo</button>
+                    </div>
                 </div>
                 <table class="table table-striped table-hover pt-2" id="agentsTable">
                     <!-- Table body will be dynamically populated here -->
@@ -75,7 +92,15 @@
 
     <!-- Include the footer using JavaScript -->
     <div id="footer-container"></div>
+    <script type="module">
+        import * as firebase from './firebase.js';
 
+        const districtButtons = document.querySelectorAll('#districtButton');
+
+        districtButtons.forEach(button => {
+            button.addEventListener('click', () => firebase.searchAgent(button.textContent));
+        });
+    </script>
     <script src="script.js"></script>
     <!-- Font Awesome JS (for icons) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
