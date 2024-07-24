@@ -50,6 +50,10 @@ a {
     color: #01184d;
 }
 
+.footer a {
+    text-decoration: none;
+}
+
 a:hover {
     color: #ed1c24;
 }
@@ -69,7 +73,7 @@ a:hover {
 }
 
 
-#winningNumber{
+#winningNumber {
     color: #261e59;
     font-size: 3rem;
 }
@@ -141,8 +145,10 @@ li {
 }
 
 .arrow-icon {
-    width: 20px; /* Adjust width as needed */
-    height: 20px; /* Adjust height as needed */
+    width: 20px;
+    /* Adjust width as needed */
+    height: 20px;
+    /* Adjust height as needed */
     /* Add any additional styling here */
 }
 
@@ -152,7 +158,7 @@ li {
     align-items: center;
 }
 
-.subAgents{
+.subAgents {
     padding-left: 1rem;
     display: flex;
     justify-content: space-between;
@@ -165,13 +171,13 @@ li {
     animation: moveText 10s linear infinite;
     color: #01184d;
 
-    
+
 }
 
 /* Styling for the horizontal lines on larger screens */
 @media (max-width: 768px) {
-    .smallScreenPadding{
+    .smallScreenPadding {
         padding-top: 1rem;
         padding-bottom: 1rem;
-    }    
+    }
 }

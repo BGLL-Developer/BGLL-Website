@@ -1,0 +1,51 @@
+body {
+    background-image: linear-gradient(to right, #1c0e80, #480d1f);
+    background-size: cover;
+    /* Adjust as needed */
+    background-position: center;
+    /* Adjust as needed */
+    background-repeat: repeat;
+    /* Adjust as needed */
+    color: white;
+}
+
+
+#top-left-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: auto;
+    z-index: 1000;
+}
+
+#top-right-image {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: auto;
+    z-index: 1000;
+}
+
+#bottom-right-image {
+    margin-bottom: 10px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    height: auto;
+    z-index: 1000;
+}
+
+.text-spaced {
+    letter-spacing: 8px;
+}
+
+.jackpot {
+    color: #eec600;
+}
+
+.underline {
+    text-decoration: underline;
+}
