@@ -50,11 +50,11 @@ body {
     text-decoration: underline;
 }
 
-.fs-1 {
-    font-size: xx-large;
+.fs1 {
+    font-size: 4rem;
 }
 
-.fs-2 {
-    font-size: x-large;
+.fs2 {
+    font-size: 3rem;
 
 }
