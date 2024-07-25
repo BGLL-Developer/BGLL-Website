@@ -7,7 +7,7 @@ body {
     background-repeat: repeat;
     /* Adjust as needed */
     color: white;
-    margin-top: 9rem;
+    margin-top: 5.5rem;
 }
 
 
@@ -15,18 +15,20 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 13rem;
-    height: auto;
     z-index: 1000;
+
+    width: 10rem;
+    height: auto;
 }
 
 #top-right-image {
     position: fixed;
     top: 0;
     right: 0;
-    width: 13rem;
-    height: auto;
     z-index: 1000;
+
+    width: 10rem;
+    height: auto;
 }
 
 #bottom-right-image {
@@ -34,9 +36,10 @@ body {
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 13rem;
-    height: auto;
     z-index: 1000;
+
+    width: 10rem;
+    height: auto;
 }
 
 .text-spaced {
@@ -52,10 +55,153 @@ body {
 }
 
 .fs1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
 }
 
 .fs2 {
-    font-size: 3rem;
+    font-size: 1.75rem;
+}
 
+.borderBottom {
+    border-bottom: solid 2px #ffffff91;
+}
+
+.borderStart {
+    border-left: solid 2px #ffffff91;
+}
+
+@media only screen and (max-width: 600px) {
+    /* Your styles for phone screens go here */
+
+    body {
+        margin-top: 6rem;
+    }
+
+    #top-left-image {
+        width: 8rem;
+        height: auto;
+    }
+
+    #top-right-image {
+        width: 8rem;
+        height: auto;
+    }
+
+    #bottom-right-image {
+        width: 8rem;
+        height: auto;
+    }
+
+    .fs1 {
+        font-size: 2.5rem;
+    }
+
+    .fs2 {
+        font-size: 1.75rem;
+    }
+
+    .borderBottom {
+        border-bottom: solid 0px;
+    }
+
+    .borderStart {
+        border-left: solid 0px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Your styles for 14-inch laptop screens go here */
+
+    body {
+        margin-top: 7rem;
+    }
+
+    #top-left-image {
+        width: 9rem;
+        height: auto;
+    }
+
+    #top-right-image {
+        width: 9rem;
+        height: auto;
+    }
+
+    #bottom-right-image {
+        width: 9rem;
+        height: auto;
+    }
+
+    .fs1 {
+        font-size: 4rem;
+    }
+
+    .fs2 {
+        font-size: 3rem;
+    }
+}
+
+
+
+
+@media only screen and (min-width: 1025px) and (max-width: 1920px) {
+    /* Your styles for big monitor screens go here */
+
+    body {
+        margin-top: 5rem;
+    }
+
+    #top-left-image {
+        width: 10rem;
+        height: auto;
+    }
+
+    #top-right-image {
+        width: 10rem;
+        height: auto;
+    }
+
+    #bottom-right-image {
+        width: 10rem;
+        height: auto;
+    }
+
+    .fs1 {
+        font-size: 3rem;
+    }
+
+    .fs2 {
+        font-size: 2.5rem;
+    }
+}
+
+
+@media only screen and (min-width: 1921px) {
+    /* Your styles for TV screens go here */
+
+    body {
+        margin-top: 10rem;
+    }
+
+    #top-left-image {
+        width: 16rem;
+        height: auto;
+    }
+
+    #top-right-image {
+        width: 16rem;
+        height: auto;
+    }
+
+    #bottom-right-image {
+        width: 16rem;
+        height: auto;
+    }
+
+    .fs1 {
+        font-size: 6rem;
+    }
+
+    .fs2 {
+        font-size: 4.5rem;
+    }
 }
