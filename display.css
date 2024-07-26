@@ -141,8 +141,6 @@ body {
 }
 
 
-
-
 @media only screen and (min-width: 1025px) {
     /* Your styles for TV screens go here */
 
@@ -166,10 +164,10 @@ body {
     }
 
     .fs1 {
-        font-size: 6rem;
+        font-size: 4rem;
     }
 
     .fs2 {
-        font-size: 4.5rem;
+        font-size: 3.5rem;
     }
 }
