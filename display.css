@@ -143,39 +143,7 @@ body {
 
 
 
-@media only screen and (min-width: 1025px) and (max-width: 1920px) {
-    /* Your styles for big monitor screens go here */
-
-    body {
-        margin-top: 5rem;
-    }
-
-    #top-left-image {
-        width: 15rem;
-        height: auto;
-    }
-
-    #top-right-image {
-        width: 10rem;
-        height: auto;
-    }
-
-    #bottom-right-image {
-        width: 10rem;
-        height: auto;
-    }
-
-    .fs1 {
-        font-size: 3rem;
-    }
-
-    .fs2 {
-        font-size: 2.5rem;
-    }
-}
-
-
-@media only screen and (min-width: 1921px) {
+@media only screen and (min-width: 1025px) {
     /* Your styles for TV screens go here */
 
     body {
