@@ -102,13 +102,13 @@
             <script type="module">
                 import * as firebase from './firebase.js';
 
-                firebase.listenForChangesBoledo(new Date().toLocaleDateString());
+                firebase.listenForChangesBoledo();
                 firebase.listenForChangesJackpot("Jackpot");
 
                 // Set up winning number update for each game
                 setInterval(() => {
-                    firebase.listenForChangesBoledo(new Date().toLocaleDateString());
-                    firebase.listenForChangesJackpot("Jackpot", new Date().toLocaleDateString());
+                    firebase.listenForChangesBoledo();
+                    firebase.listenForChangesJackpot();
                 }, 300000);
             </script>
 

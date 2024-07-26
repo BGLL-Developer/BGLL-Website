@@ -20,10 +20,13 @@ import { getFirestore, doc, getDocs, collection, query, where, onSnapshot } from
 // --------------------------------------------------------------------------------------------
 let countrer = 0;
 function todayWinningNumber(dateString) {
+
+    const formattedDate = formatDateToMDY(dateString);
     // Reference to your Firebase database
+
     const db = getFirestore(app);
     const boledoRef = collection(db, "Boledo");
-    const q = query(boledoRef, where("date", "==", dateString), where('status', '==', 'active')); // Filter by date field
+    const q = query(boledoRef, where("date", "==", formattedDate), where('status', '==', 'active')); // Filter by date field
 
     getDocs(q).then((querySnapshot) => {
         const winningNumbers = querySnapshot.docs.map((doc) => doc.data());
@@ -51,10 +54,22 @@ function todayWinningNumber(dateString) {
     });
 }
 
+function formatDateToMDY(date) {
+    let month = date.getMonth() + 1; // Months are zero-based
+    let day = date.getDate();
+    let year = date.getFullYear();
+
+    // Ensure two digits for month and day
+    month = month < 10 ? '' + month : month;
+    day = day < 10 ? '' + day : day;
+
+    return `${month}/${day}/${year}`;
+}
+
 function getYesterdayDateString() {
     const today = new Date();
     today.setDate(today.getDate() - (++countrer));
-    return today.toLocaleDateString();
+    return today;
 }
 
 
@@ -231,6 +246,10 @@ function listenForChangesBoledo() {
     const monday = getMondayOfCurrentWeek();
     const friday = getFridayOfCurrentWeek();
 
+    const stringMonday = formatDateToMDY(monday);
+    const stringFriday = formatDateToMDY(friday);
+
+
     const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
     const dayElements = {
         'Mon': 'boledoWinningNumberMon',
@@ -239,9 +258,6 @@ function listenForChangesBoledo() {
         'Thu': 'boledoWinningNumberThu',
         'Fri': 'boledoWinningNumberFri'
     };
-
-    const stringMonday = monday.toLocaleDateString();
-    const stringFriday = friday.toLocaleDateString();
 
     const q = query(boledoRef,
         where("date", ">=", stringMonday),
@@ -279,7 +295,10 @@ function getSundayOfCurrentWeek() {
     const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday, ..., 6 is Saturday
     const diff = now.getDate() - dayOfWeek; // Calculate days since the last Sunday
     const sunday = new Date(now.setDate(diff));
-    return sunday;
+
+    const formattedDate = formatDateToMDY(sunday);
+
+    return formattedDate;
 }
 
 function listenForChangesJackpot() {
@@ -287,7 +306,7 @@ function listenForChangesJackpot() {
     const jackpotRef = collection(db, "Jackpot");
     const sunday = getSundayOfCurrentWeek();
 
-    const stringSunday = sunday.toLocaleDateString();
+    const stringSunday = sunday;
 
     console.log(stringSunday)
 
