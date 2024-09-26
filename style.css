@@ -84,6 +84,10 @@ a:hover {
     border-radius: 1rem;
 }
 
+.newsImage {
+    width: 40rem;
+}
+
 .slider-image {
     width: 100%;
     display: none;
@@ -179,5 +183,9 @@ li {
     .smallScreenPadding {
         padding-top: 1rem;
         padding-bottom: 1rem;
+    }
+
+    .newsImage {
+        width: 18rem;
     }
 }
