@@ -85,7 +85,13 @@ a:hover {
 }
 
 .newsImage {
-    width: 40rem;
+    width: 30rem;
+    border-radius: 1rem;
+}
+
+.raffleImage {
+    width: 23rem;
+    border-radius: 1rem;
 }
 
 .slider-image {
@@ -187,5 +193,9 @@ li {
 
     .newsImage {
         width: 18rem;
+    }
+
+    .raffleImage {
+        width: 15rem;
     }
 }
