@@ -198,4 +198,10 @@ li {
     .raffleImage {
         width: 15rem;
     }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        margin-left: -2.5rem;
+        margin-right: -2.5rem;
+    }
 }
