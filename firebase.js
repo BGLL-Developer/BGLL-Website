@@ -1,9 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+// Import Firebase Performance Monitoring SDK
+import { getPerformance } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-performance.js";
+// Import the AppCheck module and the ReCaptcha provider
+import * as appCheck from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app-check.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBTMrLBvBniX58bDBQgWuUtuU-SAu1qIxs",
+  apiKey: "AIzaSyBGMnBQeYawhO5UKz5zTX2-IL77ePBiDW0",
   authDomain: "bgll-update-portal-35881.firebaseapp.com",
   projectId: "bgll-update-portal-35881",
   storageBucket: "bgll-update-portal-35881",
@@ -14,20 +18,17 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-
-// Import the AppCheck module and the ReCaptcha provider
-import * as appCheck from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app-check.js";
-
 // Initialize AppCheck with reCAPTCHA v3
 const appCheckInstance = appCheck.initializeAppCheck(app, {
   provider: new appCheck.ReCaptchaV3Provider("6Le1a5MqAAAAAOOGH-qEa-_5L2B2sJQjWKFp4P9i"), // Replace with your reCAPTCHA v3 site key
   isTokenAutoRefreshEnabled: true, // Optional: Enables auto-refresh of AppCheck tokens
 });
 
+// Initialize Firebase Performance Monitoring
+const perf = getPerformance(app);
+
 // Use the AppCheck.getToken() method to retrieve a token
 appCheck.getToken(appCheckInstance).then((token) => {
-  console.log('App Check Token:', token);
-
   // Proceed with Firestore operations (read/write)
   const db = getFirestore(app);
   // Your Firestore code here
