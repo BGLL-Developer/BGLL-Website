@@ -14,6 +14,29 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+
+// Import the AppCheck module and the ReCaptcha provider
+import * as appCheck from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app-check.js";
+
+// Initialize AppCheck with reCAPTCHA v3
+const appCheckInstance = appCheck.initializeAppCheck(app, {
+  provider: new appCheck.ReCaptchaV3Provider("6Le1a5MqAAAAAOOGH-qEa-_5L2B2sJQjWKFp4P9i"), // Replace with your reCAPTCHA v3 site key
+  isTokenAutoRefreshEnabled: true, // Optional: Enables auto-refresh of AppCheck tokens
+});
+
+// Use the AppCheck.getToken() method to retrieve a token
+appCheck.getToken(appCheckInstance).then((token) => {
+  console.log('App Check Token:', token);
+
+  // Proceed with Firestore operations (read/write)
+  const db = getFirestore(app);
+  // Your Firestore code here
+}).catch((error) => {
+  console.error('App Check Token Error:', error);
+});
+
+
+
 // Import the necessary Firebase modules
 import {
   getFirestore,
@@ -309,4 +332,12 @@ function populateAgentsTable(agents) {
     });
     agentsTable.appendChild(tableBody);
   }
+}
+
+
+function onClick(e) {
+  e.preventDefault();
+  grecaptcha.enterprise.ready(async () => {
+    const token = await grecaptcha.enterprise.execute('6LdoWJMqAAAAAESI5V_Yjj8tJE9-2jp2H8KhK5zG', { action: 'LOGIN' });
+  });
 }
