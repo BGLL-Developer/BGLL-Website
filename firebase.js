@@ -2,6 +2,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 // Import Firebase Performance Monitoring SDK
 import { getPerformance } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-performance.js";
+// Import the necessary Firebase modules
+import { Timestamp, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 // Import the AppCheck module and the ReCaptcha provider
 import * as appCheck from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app-check.js";
 
@@ -47,14 +49,6 @@ import {
   where,
 } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
-// Helper function to format the date to MM/DD/YYYY
-function formatDateToMDY(date) {
-  const month = (date.getMonth() + 1).toString().padStart(2, "");
-  const day = date.getDate().toString().padStart(2, "");
-  const year = date.getFullYear();
-  return `${month}/${day}/${year}`;
-}
-
 // Get the Monday of the current week
 function getMondayOfCurrentWeek() {
   const now = new Date();
@@ -62,7 +56,7 @@ function getMondayOfCurrentWeek() {
   const diff = now.getDate() - dayOfWeek + (dayOfWeek === 0 ? -6 : 1); // move back to the Monday of the current week
   const monday = new Date(now.setDate(diff));
   monday.setHours(0, 0, 0, 0); // set the time to 00:00:00:000 for consistency
-  return monday;
+  return Timestamp.fromDate(monday); // Convert to Firestore Timestamp
 }
 
 // Get the Sunday of the current week
@@ -72,15 +66,15 @@ function getSundayOfCurrentWeek() {
   const diff = now.getDate() - dayOfWeek; // Calculate days since the last Sunday
   const sunday = new Date(now.setDate(diff));
   sunday.setHours(0, 0, 0, 0); // set the time to 00:00:00:000 for consistency
-  return sunday;
+  return Timestamp.fromDate(sunday); // Convert to Firestore Timestamp
 }
 
 // Function to query winning numbers for a given date
-function queryWinningNumbers(db, collectionName, date, status, callback) {
+function queryWinningNumbers(db, collectionName, timestamp, status, callback) {
   const ref = collection(db, collectionName);
   const q = query(
     ref,
-    where("date", "==", date),
+    where("timestamp", "==", timestamp),
     where("status", "==", status)
   );
   getDocs(q)
@@ -89,7 +83,7 @@ function queryWinningNumbers(db, collectionName, date, status, callback) {
       callback(winningNumbers);
     })
     .catch((error) => {
-      console.error(`Error getting documents for ${date}:`, error);
+      console.error(`Error getting documents for timestamp:`, error);
     });
 }
 
@@ -120,7 +114,7 @@ function listenForChangesBoledo() {
   daysOfWeek.forEach((day, index) => {
     const currentDay = new Date(monday);
     currentDay.setDate(monday.getDate() + index);
-    const formattedDate = formatDateToMDY(currentDay);
+    const formattedDate = Timestamp.fromDate(currentDay); // Convert to timestamp
 
     queryWinningNumbers(
       db,
@@ -135,9 +129,7 @@ function listenForChangesBoledo() {
           const data = winningNumbers[0]; // Assuming one document per day
           dayElement.innerText = `${data.winningNumber}`;
         } else {
-          console.log(
-            `No Boledo data available for ${day + ": " + formattedDate}`
-          );
+          console.log(`No Boledo data available for ${day}: ${formattedDate}`);
         }
       }
     );
@@ -147,23 +139,17 @@ function listenForChangesBoledo() {
 function listenForChangesJackpot() {
   const db = getFirestore(app);
   const sunday = getSundayOfCurrentWeek();
-  const formattedDate = formatDateToMDY(sunday);
 
   queryWinningNumbers(
     db,
     "Jackpot",
-    formattedDate,
+    sunday, // Pass timestamp for Sunday
     "active",
     (winningNumbers) => {
-      const jackpotFirstNumbersElement = document.getElementById(
-        "jackpotFirstWinningNumber"
-      );
-      const jackpotSecondNumbersElement = document.getElementById(
-        "jackpotSecondWinningNumber"
-      );
-      const jackpotThirdNumbersElement = document.getElementById(
-        "jackpotThirdWinningNumber"
-      );
+      const jackpotFirstNumbersElement = document.getElementById("jackpotFirstWinningNumber");
+      const jackpotSecondNumbersElement = document.getElementById("jackpotSecondWinningNumber");
+      const jackpotThirdNumbersElement = document.getElementById("jackpotThirdWinningNumber");
+
       jackpotFirstNumbersElement.innerHTML = ""; // Clear previous numbers
       jackpotSecondNumbersElement.innerHTML = ""; // Clear previous numbers
       jackpotThirdNumbersElement.innerHTML = ""; // Clear previous numbers
@@ -195,29 +181,42 @@ export {
 
 let counter = 0;
 
-function todayWinningNumber(dateString) {
-  const formattedDate = formatDateToMDY(dateString);
+function todayWinningNumber() {
   const db = getFirestore(app);
-  queryWinningNumbers(
-    db,
-    "Boledo",
-    formattedDate,
-    "active",
-    (winningNumbers) => {
+
+  // Query Firestore for the most recent winning number for that day, ordered by date
+  const ref = collection(db, "Boledo");
+  const q = query(
+    ref,
+    where("status", "==", "active"),
+    orderBy("date", "desc"), // Order by timestamp in descending order
+    limit(1)  // Limit to the latest result
+  );
+
+  getDocs(q)
+    .then((querySnapshot) => {
+      const winningNumbers = querySnapshot.docs.map((doc) => doc.data());
+
       if (winningNumbers.length > 0) {
-        const data = winningNumbers[0];
-        const parsedDate = new Date(dateString);
-        document.getElementById("date").innerText = isNaN(parsedDate.getDate())
-          ? dateString
-          : parsedDate.toDateString();
+        const data = winningNumbers[0];  // The latest entry
+        const timestampDate = data.date.toDate(); // Convert Firestore Timestamp to JavaScript Date
+        const formattedDate = timestampDate.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+
+        document.getElementById("date").innerText = formattedDate;
         document.getElementById("winningNumber").innerText = data.winningNumber;
       } else {
-        console.log("No data available for", formattedDate);
-        todayWinningNumber(getYesterdayDateString());
+        console.log("No data available");
       }
-    }
-  );
+    })
+    .catch((error) => {
+      console.error("Error getting documents:", error);
+    });
 }
+
 
 function getYesterdayDateString() {
   const today = new Date();
