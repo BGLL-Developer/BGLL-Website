@@ -1,1 +1,380 @@
-const _0x61c2d9 = _0x4d85; (function (_0x7713ac, _0x48042c) { const _0x3f36d8 = _0x4d85, _0x237627 = _0x7713ac(); while (!![]) { try { const _0x943347 = -parseInt(_0x3f36d8(0xd4)) / 0x1 * (parseInt(_0x3f36d8(0x9d)) / 0x2) + parseInt(_0x3f36d8(0xd8)) / 0x3 * (parseInt(_0x3f36d8(0xa6)) / 0x4) + parseInt(_0x3f36d8(0xba)) / 0x5 * (parseInt(_0x3f36d8(0xa2)) / 0x6) + parseInt(_0x3f36d8(0xda)) / 0x7 * (-parseInt(_0x3f36d8(0xa8)) / 0x8) + -parseInt(_0x3f36d8(0xb3)) / 0x9 * (parseInt(_0x3f36d8(0xd1)) / 0xa) + parseInt(_0x3f36d8(0x97)) / 0xb + -parseInt(_0x3f36d8(0xbf)) / 0xc; if (_0x943347 === _0x48042c) break; else _0x237627['push'](_0x237627['shift']()); } catch (_0x27b24c) { _0x237627['push'](_0x237627['shift']()); } } }(_0x50d1, 0xcd4e4)); import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js'; function _0x50d1() { const _0xea080f = ['boledoWinningNumberMon', 'firstWinningNumber', '</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20style=\x22text-align:\x20left;\x22>', 'Sun', 'en-US', 'Agents', 'desc', 'boledoWinningNumberWed', 'tbody', 'getToken', 'jackpotFirstWinningNumber', 'community', 'error', 'Error\x20fetching\x20Jackpot\x20data\x20for\x20Sunday:', 'address', '<tr><td\x20colspan=\x225\x22\x20style=\x22text-align:\x20center;\x22>No\x20Agents\x20Found</td></tr>', '275810DBBrnr', 'App\x20Check\x20Token\x20Error:', 'beforeend', '6cfLhFf', 'No\x20Results\x20Found', 'then', 'Error\x20fetching\x20Jackpot\x20data:', '166029nOdhuO', 'bgll-update-portal-35881', '210105yeQQko', 'jackpotThirdWinningNumber', '830618333350', 'data', 'district', 'boledoWinningNumberTue', 'Error\x20fetching\x20Boledo\x20data:', 'thirdWinningNumber', 'replace', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20style=\x22text-align:\x20left;\x22>', 'entries', 'innerHTML', 'createElement', 'Error\x20getting\x20documents:', 'insertAdjacentHTML', 'Sat', 'Thu', 'innerText', 'docs', 'Today\x20is\x20Sunday,\x20not\x20displaying\x20Boledo\x20numbers.', 'winningNumber', 'catch', 'No\x20winning\x20numbers\x20found\x20for\x20this\x20game\x20and\x20date', 'setHours', '6Le1a5MqAAAAAOOGH-qEa-_5L2B2sJQjWKFp4P9i', 'fromDate', 'No\x20Boledo\x20data\x20available\x20for\x20', 'date', 'empty', 'AIzaSyBGMnBQeYawhO5UKz5zTX2-IL77ePBiDW0', 'numeric', 'log', '524469decyua', 'getDay', 'bgll-update-portal-35881.firebaseapp.com', 'setDate', 'getDate', 'Error\x20fetching\x20agent\x20info:', '49994RVUTlq', 'split', 'long', 'Jackpot', '<br>', '414Axrpsm', 'appendChild', 'businessName', 'active', '56pLBFuP', '1:830618333350:web:7d6acbd0260d58c8f80467', '32vLGdDV', 'forEach', 'length', 'No\x20active\x20Jackpot\x20data\x20available.', '<span\x20class=\x22underline\x22>', 'secondWinningNumber', 'textContent', 'datePicker', '</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20', 'Boledo', 'gameWinningTitle', '63AsYPrV', 'getElementById', 'map', 'Select\x20a\x20Date', 'value', 'No\x20data\x20available', 'Error\x20fetching\x20winning\x20numbers:', '104540ugbXEU', 'Tue', 'Mon', 'toDate', 'status', '11533104CvGWgl', 'boledoWinningNumberFri']; _0x50d1 = function () { return _0xea080f; }; return _0x50d1(); } import { Timestamp, orderBy, limit } from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js'; import *as _0x25755d from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-app-check.js'; const firebaseConfig = { 'apiKey': _0x61c2d9(0x94), 'authDomain': _0x61c2d9(0x99), 'projectId': _0x61c2d9(0xd9), 'storageBucket': _0x61c2d9(0xd9), 'messagingSenderId': _0x61c2d9(0xdc), 'appId': _0x61c2d9(0xa7) }, app = initializeApp(firebaseConfig), appCheckInstance = _0x25755d['initializeAppCheck'](app, { 'provider': new _0x25755d['ReCaptchaV3Provider'](_0x61c2d9(0x8f)), 'isTokenAutoRefreshEnabled': !![] }); _0x25755d[_0x61c2d9(0xca)](appCheckInstance)['then'](_0x454bce => { const _0x39d207 = getFirestore(app); })[_0x61c2d9(0x8c)](_0x53e36c => { const _0x2f46d4 = _0x61c2d9; console[_0x2f46d4(0xcd)](_0x2f46d4(0xd2), _0x53e36c); }); function _0x4d85(_0x341c4f, _0x14e63f) { const _0x50d1b0 = _0x50d1(); return _0x4d85 = function (_0x4d8555, _0x265a50) { _0x4d8555 = _0x4d8555 - 0x8c; let _0x3c7c98 = _0x50d1b0[_0x4d8555]; return _0x3c7c98; }, _0x4d85(_0x341c4f, _0x14e63f); } import { getFirestore, getDocs, collection, query, where } from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js'; function listenForChangesBoledo() { const _0xe77f50 = _0x61c2d9, _0x2fc951 = getFirestore(app); function _0x118bee() { const _0x36d1d0 = _0x4d85, _0x17cdd8 = new Date(), _0x41c2c0 = _0x17cdd8['getDay'](), _0x3fdcd1 = _0x41c2c0 === 0x0 ? -0x6 : 0x1 - _0x41c2c0, _0x6eefc5 = new Date(_0x17cdd8); return _0x6eefc5[_0x36d1d0(0x9a)](_0x17cdd8[_0x36d1d0(0x9b)]() + _0x3fdcd1), _0x6eefc5[_0x36d1d0(0x8e)](0x0, 0x0, 0x0, 0x0), _0x6eefc5; } const _0x3bad24 = _0x118bee(), _0x301c4e = new Date(_0x3bad24); _0x301c4e[_0xe77f50(0x9a)](_0x3bad24[_0xe77f50(0x9b)]() + 0x4), _0x301c4e[_0xe77f50(0x8e)](0x17, 0x3b, 0x3b, 0x3e7); const _0x31a08a = Timestamp[_0xe77f50(0x90)](_0x3bad24), _0x1f1b65 = Timestamp['fromDate'](_0x301c4e), _0x4de7db = { 'Mon': _0xe77f50(0xc1), 'Tue': _0xe77f50(0xdf), 'Wed': _0xe77f50(0xc8), 'Thu': 'boledoWinningNumberThu', 'Fri': _0xe77f50(0xc0) }, _0x3d6a40 = new Date(); if (_0x3d6a40[_0xe77f50(0x98)]() === 0x0) { console[_0xe77f50(0x96)](_0xe77f50(0xed)), Object['values'](_0x4de7db)[_0xe77f50(0xa9)](_0x35329f => { const _0x20209a = _0xe77f50; document[_0x20209a(0xb4)](_0x35329f)['innerHTML'] = ''; }); return; } const _0x81dabc = query(collection(_0x2fc951, _0xe77f50(0xb1)), where(_0xe77f50(0x92), '>=', _0x31a08a), where(_0xe77f50(0x92), '<=', _0x1f1b65), where('status', '==', 'active')); getDocs(_0x81dabc)['then'](_0x3e504b => { const _0x730a16 = _0xe77f50, _0x2790a5 = {}; _0x3e504b[_0x730a16(0xa9)](_0x1c0f38 => { const _0x2759bb = _0x730a16, _0x2fd2f6 = _0x1c0f38[_0x2759bb(0xdd)](), _0x225472 = _0x2fd2f6[_0x2759bb(0x92)][_0x2759bb(0xbd)](), _0x48f2ed = [_0x2759bb(0xc4), _0x2759bb(0xbc), _0x2759bb(0xbb), 'Wed', _0x2759bb(0xea), 'Fri', _0x2759bb(0xe9)][_0x225472['getDay']()]; _0x2790a5[_0x48f2ed] = _0x2fd2f6[_0x2759bb(0xee)]; }), Object[_0x730a16(0xe4)](_0x4de7db)['forEach'](([_0x41272c, _0x1633ad]) => { const _0x2ff8ed = _0x730a16, _0x4c75f6 = document['getElementById'](_0x1633ad); _0x4c75f6[_0x2ff8ed(0xe5)] = '', _0x2790a5[_0x41272c] ? _0x4c75f6[_0x2ff8ed(0xeb)] = _0x2790a5[_0x41272c] : console[_0x2ff8ed(0x96)](_0x2ff8ed(0x91) + _0x41272c); }); })[_0xe77f50(0x8c)](_0x56e1b7 => { const _0x5e0e5b = _0xe77f50; console[_0x5e0e5b(0xcd)](_0x5e0e5b(0xe0), _0x56e1b7); }); } function listenForChangesJackpot() { const _0x481ad4 = _0x61c2d9, _0x29135a = getFirestore(app); function _0x1e2544() { const _0xb7cfcb = _0x4d85, _0x585fab = new Date(); return _0x585fab[_0xb7cfcb(0x98)]() === 0x0; } const _0x144de4 = collection(_0x29135a, _0x481ad4(0xa0)); if (_0x1e2544()) { const _0x5b11dc = new Date(), _0x1e3d58 = new Date(_0x5b11dc); _0x1e3d58[_0x481ad4(0x8e)](0x0, 0x0, 0x0, 0x0); const _0x4ca1af = new Date(_0x5b11dc); _0x4ca1af['setHours'](0x17, 0x3b, 0x3b, 0x3e7); const _0x100e97 = query(_0x144de4, where(_0x481ad4(0xbe), '==', _0x481ad4(0xa5)), where(_0x481ad4(0x92), '>=', _0x1e3d58), where(_0x481ad4(0x92), '<=', _0x4ca1af), orderBy(_0x481ad4(0x92), 'des'), limit(0x1)); getDocs(_0x100e97)['then'](_0x3aea38 => { _0x222ca8(_0x3aea38); })[_0x481ad4(0x8c)](_0x4d3bd9 => { const _0x1f3b07 = _0x481ad4; console[_0x1f3b07(0xcd)](_0x1f3b07(0xce), _0x4d3bd9); }); } else { const _0x552677 = query(_0x144de4, where(_0x481ad4(0xbe), '==', _0x481ad4(0xa5)), orderBy(_0x481ad4(0x92), _0x481ad4(0xc7)), limit(0x1)); getDocs(_0x552677)[_0x481ad4(0xd6)](_0x3c96dc => { _0x222ca8(_0x3c96dc); })[_0x481ad4(0x8c)](_0x518ebc => { const _0x58f133 = _0x481ad4; console['error'](_0x58f133(0xd7), _0x518ebc); }); } function _0x222ca8(_0x5f4d73) { const _0x4145f = _0x481ad4, _0x5dd8b2 = document[_0x4145f(0xb4)](_0x4145f(0xcb)), _0x332268 = document['getElementById']('jackpotSecondWinningNumber'), _0x4e1e55 = document[_0x4145f(0xb4)](_0x4145f(0xdb)); _0x5dd8b2['innerHTML'] = '', _0x332268[_0x4145f(0xe5)] = '', _0x4e1e55[_0x4145f(0xe5)] = ''; if (_0x5f4d73[_0x4145f(0x93)]) { console[_0x4145f(0x96)](_0x4145f(0xab)); _0x1e2544() && console['log']('Today\x20is\x20Sunday.\x20No\x20new\x20data\x20available,\x20clearing\x20display.'); return; } const _0x530c17 = _0x5f4d73[_0x4145f(0xec)][0x0][_0x4145f(0xdd)](), _0x2b73e2 = _0x530c17[_0x4145f(0xc2)]['slice'](-0x2), _0x24ab68 = _0x530c17['firstWinningNumber']['slice'](0x0, -0x2); _0x5dd8b2[_0x4145f(0xe5)] = _0x24ab68 + _0x4145f(0xac) + _0x2b73e2 + '</span>', _0x332268[_0x4145f(0xeb)] = '' + _0x530c17[_0x4145f(0xad)], _0x4e1e55[_0x4145f(0xeb)] = '' + _0x530c17['thirdWinningNumber']; } } function todayWinningNumber() { const _0x1cc1ef = _0x61c2d9, _0x5d9c4e = getFirestore(app), _0x3e08bf = collection(_0x5d9c4e, _0x1cc1ef(0xb1)), _0x7b88c6 = query(_0x3e08bf, where('status', '==', _0x1cc1ef(0xa5)), orderBy('date', 'desc'), limit(0x1)); getDocs(_0x7b88c6)[_0x1cc1ef(0xd6)](_0x50944f => { const _0x1ca28e = _0x1cc1ef, _0x5d6b05 = _0x50944f['docs']['map'](_0x120d53 => _0x120d53[_0x1ca28e(0xdd)]()); if (_0x5d6b05[_0x1ca28e(0xaa)] > 0x0) { const _0x40d94f = _0x5d6b05[0x0], _0x1750f5 = _0x40d94f[_0x1ca28e(0x92)][_0x1ca28e(0xbd)](), _0x4af913 = _0x1750f5['toLocaleDateString'](_0x1ca28e(0xc5), { 'year': _0x1ca28e(0x95), 'month': _0x1ca28e(0x9f), 'day': _0x1ca28e(0x95) }); document[_0x1ca28e(0xb4)]('date')[_0x1ca28e(0xeb)] = _0x4af913, document['getElementById'](_0x1ca28e(0xee))[_0x1ca28e(0xeb)] = _0x40d94f[_0x1ca28e(0xee)]; } else console[_0x1ca28e(0x96)](_0x1ca28e(0xb8)); })[_0x1cc1ef(0x8c)](_0x599d1a => { const _0x8e8cf4 = _0x1cc1ef; console[_0x8e8cf4(0xcd)](_0x8e8cf4(0xe7), _0x599d1a); }); } function searchWinningNumber() { const _0x2d974b = _0x61c2d9, _0x15d1fc = document[_0x2d974b(0xb4)]('gameSelect')[_0x2d974b(0xb7)], _0x59fd5d = document[_0x2d974b(0xb4)](_0x2d974b(0xaf))[_0x2d974b(0xb7)]; if (!_0x59fd5d) { document[_0x2d974b(0xb4)](_0x2d974b(0xb2))['textContent'] = _0x2d974b(0xb6), document['getElementById'](_0x2d974b(0xee))[_0x2d974b(0xae)] = ''; return; } const _0x34622b = _0x59fd5d[_0x2d974b(0x9e)]('-'), _0x4e3dce = _0x34622b[0x1][_0x2d974b(0xe2)](/^0+/, ''), _0x50a66b = _0x34622b[0x2][_0x2d974b(0xe2)](/^0+/, ''), _0x2c5cd0 = _0x34622b[0x0], _0x3d4658 = _0x4e3dce + '/' + _0x50a66b + '/' + _0x2c5cd0, _0x6e05b3 = new Date(_0x3d4658), _0x5ac265 = Timestamp[_0x2d974b(0x90)](_0x6e05b3), _0x2d40fd = Timestamp['fromDate'](_0x6e05b3), _0x55d6a4 = getFirestore(app), _0x3a8bd6 = collection(_0x55d6a4, _0x15d1fc), _0x7eb9d8 = query(_0x3a8bd6, where(_0x2d974b(0x92), '>=', _0x5ac265), where(_0x2d974b(0x92), '<=', _0x2d40fd), where(_0x2d974b(0xbe), '==', 'active')); getDocs(_0x7eb9d8)[_0x2d974b(0xd6)](_0x45a203 => { const _0x3d4d47 = _0x2d974b; if (_0x45a203['empty']) console[_0x3d4d47(0x96)](_0x3d4d47(0x8d)), document[_0x3d4d47(0xb4)](_0x3d4d47(0xb2))[_0x3d4d47(0xae)] = _0x3d4d47(0xd5), document[_0x3d4d47(0xb4)]('winningNumber')['textContent'] = ''; else { const _0x3ef066 = _0x45a203[_0x3d4d47(0xec)][0x0][_0x3d4d47(0xdd)](); document[_0x3d4d47(0xb4)](_0x3d4d47(0xb2))[_0x3d4d47(0xae)] = _0x15d1fc + '\x20Winning\x20Numbers', _0x15d1fc === _0x3d4d47(0xa0) ? document[_0x3d4d47(0xb4)](_0x3d4d47(0xee))[_0x3d4d47(0xe5)] = _0x3ef066[_0x3d4d47(0xc2)] + '<br>' + _0x3ef066[_0x3d4d47(0xad)] + _0x3d4d47(0xa1) + _0x3ef066[_0x3d4d47(0xe1)] : document[_0x3d4d47(0xb4)]('winningNumber')[_0x3d4d47(0xae)] = _0x3ef066[_0x3d4d47(0xee)]; } })[_0x2d974b(0x8c)](_0x489b02 => { const _0x18778f = _0x2d974b; console[_0x18778f(0xcd)](_0x18778f(0xb9), _0x489b02); }); } function searchAgent(_0x193e4b) { const _0x385f54 = _0x61c2d9, _0x11d669 = getFirestore(app), _0x4df00e = collection(_0x11d669, _0x385f54(0xc6)), _0x531d31 = query(_0x4df00e, where(_0x385f54(0xde), '==', _0x193e4b), where(_0x385f54(0xbe), '==', 'active')); getDocs(_0x531d31)['then'](_0x442660 => { const _0xcc1771 = _0x385f54, _0x514621 = _0x442660[_0xcc1771(0xec)][_0xcc1771(0xb5)](_0x4b1d33 => ({ ..._0x4b1d33[_0xcc1771(0xdd)](), 'id': _0x4b1d33['id'] })); populateAgentsTable(_0x514621); })['catch'](_0x3dc335 => { const _0x2954a6 = _0x385f54; console[_0x2954a6(0xcd)](_0x2954a6(0x9c), _0x3dc335); }); } function populateAgentsTable(_0x5c3063) { const _0x5883d0 = _0x61c2d9, _0x29b109 = document[_0x5883d0(0xb4)]('agentsTable'); _0x29b109[_0x5883d0(0xe5)] = ''; if (_0x5c3063[_0x5883d0(0xaa)] === 0x0) { const _0x1e7077 = _0x5883d0(0xd0); _0x29b109['insertAdjacentHTML']('beforeend', _0x1e7077); } else { const _0x59439e = '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<thead>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20scope=\x22col\x22\x20style=\x22text-align:\x20left;\x22>#</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20scope=\x22col\x22\x20style=\x22text-align:\x20left;\x22>Business\x20Name</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20scope=\x22col\x22\x20style=\x22text-align:\x20left;\x22>Address</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20scope=\x22col\x22\x20style=\x22text-align:\x20left;\x22>Community</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20scope=\x22col\x22\x20style=\x22text-align:\x20left;\x22>District</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</thead>\x0a\x20\x20\x20\x20\x20\x20\x20\x20'; _0x29b109[_0x5883d0(0xe8)](_0x5883d0(0xd3), _0x59439e); const _0x4bbcb3 = document[_0x5883d0(0xe6)](_0x5883d0(0xc9)); _0x5c3063[_0x5883d0(0xa9)]((_0x5de7a9, _0x56a1e9) => { const _0x27177f = _0x5883d0, _0x2619ad = _0x27177f(0xe3) + (_0x56a1e9 + 0x1) + _0x27177f(0xc3) + _0x5de7a9[_0x27177f(0xa4)] + _0x27177f(0xc3) + _0x5de7a9[_0x27177f(0xcf)] + _0x27177f(0xc3) + _0x5de7a9[_0x27177f(0xcc)] + _0x27177f(0xc3) + _0x5de7a9['district'] + _0x27177f(0xb0); _0x4bbcb3['insertAdjacentHTML']('beforeend', _0x2619ad); }), _0x29b109[_0x5883d0(0xa3)](_0x4bbcb3); } } export { todayWinningNumber, searchWinningNumber, searchAgent, listenForChangesBoledo, listenForChangesJackpot };
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+// Import Firebase Performance Monitoring SDK
+import { Timestamp, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+// Import the AppCheck module and the ReCaptcha provider
+import * as appCheck from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app-check.js";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBGMnBQeYawhO5UKz5zTX2-IL77ePBiDW0",
+  authDomain: "bgll-update-portal-35881.firebaseapp.com",
+  projectId: "bgll-update-portal-35881",
+  storageBucket: "bgll-update-portal-35881",
+  messagingSenderId: "830618333350",
+  appId: "1:830618333350:web:7d6acbd0260d58c8f80467",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// Initialize AppCheck with reCAPTCHA v3
+const appCheckInstance = appCheck.initializeAppCheck(app, {
+  provider: new appCheck.ReCaptchaV3Provider("6Le1a5MqAAAAAOOGH-qEa-_5L2B2sJQjWKFp4P9i"), // Replace with your reCAPTCHA v3 site key
+  isTokenAutoRefreshEnabled: true, // Optional: Enables auto-refresh of AppCheck tokens
+});
+
+
+// Use the AppCheck.getToken() method to retrieve a token
+appCheck.getToken(appCheckInstance).then((token) => {
+  // Proceed with Firestore operations (read/write)
+  const db = getFirestore(app);
+  // Your Firestore code here
+}).catch((error) => {
+  console.error('App Check Token Error:', error);
+});
+
+
+
+// Import the necessary Firebase modules
+import {
+  getFirestore,
+  getDocs,
+  collection,
+  query,
+  where,
+} from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+
+
+// --------------------------------------------------------------------------------------------
+
+function listenForChangesBoledo() {
+  const db = getFirestore(app);
+
+  // Helper function to get the Monday of the current week
+  function getMondayOfCurrentWeek() {
+    const today = new Date();
+    const day = today.getDay();
+    const diff = day === 0 ? -6 : 1 - day; // Adjust for Sunday (0) or other days
+    const monday = new Date(today);
+    monday.setDate(today.getDate() + diff);
+    monday.setHours(0, 0, 0, 0); // Start of the day
+    return monday;
+  }
+
+  const monday = getMondayOfCurrentWeek();
+  const friday = new Date(monday);
+  friday.setDate(monday.getDate() + 4); // Friday of the same week
+  friday.setHours(23, 59, 59, 999); // Sets to 11:59:59.999 PM
+
+  // Convert dates to Firestore Timestamps
+  const startOfWeek = Timestamp.fromDate(monday);
+  const endOfWeek = Timestamp.fromDate(friday);
+
+  const dayElements = {
+    Mon: "boledoWinningNumberMon",
+    Tue: "boledoWinningNumberTue",
+    Wed: "boledoWinningNumberWed",
+    Thu: "boledoWinningNumberThu",
+    Fri: "boledoWinningNumberFri",
+  };
+
+  // Check if today is Sunday
+  const today = new Date();
+  if (today.getDay() === 0) {
+    console.log("Today is Sunday, not displaying Boledo numbers.");
+    Object.values(dayElements).forEach((id) => {
+      document.getElementById(id).innerHTML = "";
+    });
+    return;
+  }
+
+  // Query Firestore for documents between Monday and Friday
+  const boledoQuery = query(
+    collection(db, "Boledo"),
+    where("date", ">=", startOfWeek),
+    where("date", "<=", endOfWeek),
+    where("status", "==", "active")
+  );
+
+  getDocs(boledoQuery)
+    .then((querySnapshot) => {
+      // Map the results to a keyed object for easy lookup by day
+      const results = {};
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const docDate = data.date.toDate();
+        const dayName = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][docDate.getDay()];
+        results[dayName] = data.winningNumber;
+      });
+
+      // Update the UI
+      Object.entries(dayElements).forEach(([day, elementId]) => {
+        const dayElement = document.getElementById(elementId);
+        dayElement.innerHTML = ""; // Clear previous numbers
+        if (results[day]) {
+          dayElement.innerText = results[day];
+        } else {
+          console.log(`No Boledo data available for ${day}`);
+        }
+      });
+    })
+    .catch((error) => {
+      console.error("Error fetching Boledo data:", error);
+    });
+}
+
+function listenForChangesJackpot() {
+  const db = getFirestore(app);
+
+  // Helper function to check if today is Sunday
+  function isTodaySunday() {
+    const today = new Date();
+    return today.getDay() === 0; // 0 represents Sunday
+  }
+
+  const ref = collection(db, "Jackpot");
+
+  if (isTodaySunday()) {
+    // Get today's date range (12:00 AM to 11:50 PM)
+    const today = new Date();
+    const startOfDay = new Date(today);
+    startOfDay.setHours(0, 0, 0, 0); // 12:00 AM
+    const endOfDay = new Date(today);
+    endOfDay.setHours(23, 59, 59, 999); // 11:59 PM
+
+    // Firestore query to get documents between the range
+    const q = query(
+      ref,
+      where("status", "==", "active"),
+      where("date", ">=", startOfDay),
+      where("date", "<=", endOfDay),
+      orderBy("date", "des"), // Order by date in ascending order
+      limit(1) // Limit to the most recent result
+    );
+
+    getDocs(q)
+      .then((querySnapshot) => {
+        processJackpotData(querySnapshot);
+      })
+      .catch((error) => {
+        console.error("Error fetching Jackpot data for Sunday:", error);
+      });
+  } else {
+    // Query for the most recent document (non-Sundays)
+    const q = query(
+      ref,
+      where("status", "==", "active"),
+      orderBy("date", "desc"), // Order by date in descending order
+      limit(1) // Limit to the most recent result
+    );
+
+    getDocs(q)
+      .then((querySnapshot) => {
+        processJackpotData(querySnapshot);
+      })
+      .catch((error) => {
+        console.error("Error fetching Jackpot data:", error);
+      });
+  }
+
+  // Helper function to process Jackpot data
+  function processJackpotData(querySnapshot) {
+    const jackpotFirstNumbersElement = document.getElementById("jackpotFirstWinningNumber");
+    const jackpotSecondNumbersElement = document.getElementById("jackpotSecondWinningNumber");
+    const jackpotThirdNumbersElement = document.getElementById("jackpotThirdWinningNumber");
+
+    // Clear UI elements by default
+    jackpotFirstNumbersElement.innerHTML = "";
+    jackpotSecondNumbersElement.innerHTML = "";
+    jackpotThirdNumbersElement.innerHTML = "";
+
+    if (querySnapshot.empty) {
+      console.log("No active Jackpot data available.");
+      if (isTodaySunday()) {
+        console.log("Today is Sunday. No new data available, clearing display.");
+      }
+      return;
+    }
+
+    // Process the most recent document
+    const data = querySnapshot.docs[0].data();
+    const lastTwoDigits = data.firstWinningNumber.slice(-2);
+    const restOfNumber = data.firstWinningNumber.slice(0, -2);
+
+    jackpotFirstNumbersElement.innerHTML = `${restOfNumber}<span class="underline">${lastTwoDigits}</span>`;
+    jackpotSecondNumbersElement.innerText = `${data.secondWinningNumber}`;
+    jackpotThirdNumbersElement.innerText = `${data.thirdWinningNumber}`;
+  }
+}
+
+
+// --------------------------------------------------------------------------------------------
+
+function todayWinningNumber() {
+  const db = getFirestore(app);
+
+  // Query Firestore for the most recent winning number for that day, ordered by date
+  const ref = collection(db, "Boledo");
+  const q = query(
+    ref,
+    where("status", "==", "active"),
+    orderBy("date", "desc"), // Order by timestamp in descending order
+    limit(1)  // Limit to the latest result
+  );
+
+  getDocs(q)
+    .then((querySnapshot) => {
+      const winningNumbers = querySnapshot.docs.map((doc) => doc.data());
+
+      if (winningNumbers.length > 0) {
+        const data = winningNumbers[0];  // The latest entry
+        const timestampDate = data.date.toDate(); // Convert Firestore Timestamp to JavaScript Date
+        const formattedDate = timestampDate.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+
+        document.getElementById("date").innerText = formattedDate;
+        document.getElementById("winningNumber").innerText = data.winningNumber;
+      } else {
+        console.log("No data available");
+      }
+    })
+    .catch((error) => {
+      console.error("Error getting documents:", error);
+    });
+}
+
+// --------------------------------------------------------------------------------------------
+
+function searchWinningNumber() {
+  const game = document.getElementById("gameSelect").value;
+  const selectedDate = document.getElementById("datePicker").value;
+
+  if (!selectedDate) {
+    document.getElementById("gameWinningTitle").textContent = "Select a Date";
+    document.getElementById("winningNumber").textContent = "";
+    return;
+  }
+
+  // Parse the user-selected date
+  const userDate = new Date(selectedDate);
+
+  // Get start and end of the selected day
+  const startOfDay = new Date(userDate);
+  startOfDay.setHours(0, 0, 0, 0); // Set time to 00:00:00
+
+  const endOfDay = new Date(userDate);
+  endOfDay.setHours(23, 59, 59, 999); // Set time to 23:59:59
+
+  // Convert to Firestore Timestamps
+  const fireStartDate = Timestamp.fromDate(startOfDay);
+  const fireEndDate = Timestamp.fromDate(endOfDay);
+
+  console.log("Searching from:", fireStartDate.toDate(), "to", fireEndDate.toDate());
+
+  // Firestore Query
+  const db = getFirestore();
+  const winningsRef = collection(db, game);
+  const q = query(
+    winningsRef,
+    where("date", ">=", fireStartDate),
+    where("date", "<=", fireEndDate),
+    where("status", "==", "active")
+  );
+
+  getDocs(q)
+    .then((querySnapshot) => {
+      if (querySnapshot.empty) {
+        console.log("No winning numbers found for this game and date");
+        document.getElementById("gameWinningTitle").textContent = "No Results Found";
+        document.getElementById("winningNumber").textContent = "";
+      } else {
+        const winningDoc = querySnapshot.docs[0].data();
+        document.getElementById("gameWinningTitle").textContent = `${game} Winning Numbers`;
+        if (game === "Jackpot") {
+          document.getElementById("winningNumber").innerHTML =
+            `${winningDoc.firstWinningNumber}<br>${winningDoc.secondWinningNumber}<br>${winningDoc.thirdWinningNumber}`;
+        } else {
+          document.getElementById("winningNumber").textContent = winningDoc.winningNumber;
+        }
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching winning numbers:", error);
+    });
+}
+
+// --------------------------------------------------------------------------------------------
+
+function searchAgent(district) {
+  const db = getFirestore(app);
+  const winningsRef = collection(db, "Agents");
+  const q = query(
+    winningsRef,
+    where("district", "==", district),
+    where("status", "==", "active")
+  );
+
+  getDocs(q)
+    .then((querySnapshot) => {
+      const agents = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      populateAgentsTable(agents);
+    })
+    .catch((error) => {
+      console.error("Error fetching agent info:", error);
+    });
+}
+
+function populateAgentsTable(agents) {
+  const agentsTable = document.getElementById("agentsTable");
+  agentsTable.innerHTML = ""; // Clear previous content
+
+  if (agents.length === 0) {
+    const noResultsRow = `<tr><td colspan="5" style="text-align: center;">No Agents Found</td></tr>`;
+    agentsTable.insertAdjacentHTML("beforeend", noResultsRow);
+  } else {
+    const tableHeaders = `
+            <thead>
+                <tr>
+                    <th scope="col" style="text-align: left;">#</th>
+                    <th scope="col" style="text-align: left;">Business Name</th>
+                    <th scope="col" style="text-align: left;">Address</th>
+                    <th scope="col" style="text-align: left;">Community</th>
+                    <th scope="col" style="text-align: left;">District</th>
+                </tr>
+            </thead>
+        `;
+    agentsTable.insertAdjacentHTML("beforeend", tableHeaders);
+
+    const tableBody = document.createElement("tbody");
+    agents.forEach((agent, index) => {
+      const row = `
+                <tr>
+                    <td style="text-align: left;">${index + 1}</td>
+                    <td style="text-align: left;">${agent.businessName}</td>
+                    <td style="text-align: left;">${agent.address}</td>
+                    <td style="text-align: left;">${agent.community}</td>
+                    <td style="text-align: left;">${agent.district}</td>
+                </tr>
+            `;
+      tableBody.insertAdjacentHTML("beforeend", row);
+    });
+    agentsTable.appendChild(tableBody);
+  }
+}
+
+// --------------------------------------------------------------------------------------------
+
+export {
+  todayWinningNumber,
+  searchWinningNumber,
+  searchAgent,
+  listenForChangesBoledo,
+  listenForChangesJackpot,
+};
