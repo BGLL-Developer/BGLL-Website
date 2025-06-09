@@ -1,5 +1,6 @@
 /*
-Content-Security-Policy: default-src 'self'; script-src 'self' https://www.gstatic.com; connect-src 'self'
+Content-Security-Policy: default-src 'self' https://www.gstatic.com; script-src 'self' https://www.gstatic.com;
+connect-src 'self'
 https://firestore.googleapis.com; frame-ancestors 'none';
 X-Frame-Options: SAMEORIGIN
 X-Content-Type-Options: nosniff
