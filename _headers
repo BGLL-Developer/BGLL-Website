@@ -1,8 +1,5 @@
 /*
-Content-Security-Policy:
-default-src 'self' https://www.gstatic.com;
-script-src 'self' https://www.gstatic.com;
-connect-src 'self' https://firestore.googleapis.com;
+Content-Security-Policy: frame-ancestors 'none'
 X-Frame-Options: SAMEORIGIN
 X-Content-Type-Options: nosniff
 Strict-Transport-Security: max-age=31536000; includeSubDomains
