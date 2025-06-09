@@ -1,17 +1,5 @@
 /*
-Content-Security-Policy: 
-  default-src 'self'; 
-  script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; 
-  script-src-elem 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; 
-  style-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline'; 
-  style-src-elem 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; 
-  font-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net data:; 
-  connect-src 'self'; 
-  img-src 'self' data: https:; 
-  media-src 'self'; 
-  object-src 'none'; 
-  base-uri 'self'; 
-  frame-ancestors 'self';
+Content-Security-Policy: default-src 'self';
 X-Frame-Options: SAMEORIGIN
 X-Content-Type-Options: nosniff
 Strict-Transport-Security: max-age=31536000; includeSubDomains
